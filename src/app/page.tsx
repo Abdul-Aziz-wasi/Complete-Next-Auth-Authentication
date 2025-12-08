@@ -3,6 +3,7 @@
 import { signOut, useSession } from "next-auth/react"
 import Image from "next/image"
 import { useState } from "react"
+import { HiPencil } from "react-icons/hi2";
 
 
 function Page() {
@@ -23,13 +24,12 @@ function Page() {
     }
 
   }
-
-
   console.log(data)
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4">
       {data &&
        <div className="w-full max-w-md border-2 border-white rounded-2xl p-8 shadow-lg text-center relative flex flex-col items-center">
+        <HiPencil  size={22} color="white" className="absolute right-[20px] top-[20px] cursor-pointer"/>
         {data.user.image && <div className="relative w-[150px] h-[150px] border-2 border-white rounded-full overflow-hidden mb-4">
           <Image src={data.user.image} fill alt="userImage"/>
           </div>
